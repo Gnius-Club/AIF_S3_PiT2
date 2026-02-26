@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P-INT-T2-S1.5</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1><span class="book-icon">💡</span> <strong>Playbook: Proyecto Integrador T2 - Sesión 1.5</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="global-timer">⏱️ 40:00</span>
+                <button id="global-start-stop">Start</button>
+                <button id="global-reset">Reset</button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle-input">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+                <li><a href="#activity-5">5</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <!-- ACTIVIDAD 0: DE UN VISTAZO -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
+                <p class="overview-subtitle">Sesión "Booster": Stress Test y Manejo de Errores para el Sistema Robótico.</p>
+                
+                <div class="command-section">
+                    <h3>🎯 Objetivo de Aprendizaje</h3>
+                    <div class="objective-box">
+                        <p><strong>Los estudiantes podrán:</strong> Identificar posibles puntos de fallo en sus "System Blueprints" (Stress Test) y diseñar lógica de programación (Manejo de Errores) para que el robot reaccione ante imprevistos.</p>
+                    </div>
+                </div>
+
+                <div class="command-section xolo-prompt">
+                    <h3>🤖 Prompt de Referencia para XOLO (Solo para Maestro)</h3>
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">⚠️ NOTA: XOLO actúa como Ingeniero de Fiabilidad automáticamente. Usar solo en emergencia:</span>
+                            <button class="copy-btn" onclick="copyPrompt('main-prompt')">
+                                <i class="fas fa-copy"></i> Copiar
+                            </button>
+                        </div>
+                        <pre id="main-prompt">Actúa como Ingeniero de Fiabilidad experto en robótica. Revisa los pasos de mi robot (Cutebot + AI Lens) y ayúdame a identificar posibles fallos (Red Team) y cómo programar la solución (ej: timeouts, alertas sonoras, reintentos). Sé crítico pero constructivo.</pre>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3>⚡ Puntos Esenciales de la Misión</h3>
+                    <div class="essentials-grid">
+                        <div class="essential-card">
+                            <div class="essential-icon">🛡️</div>
+                            <h4>Concepto Clave</h4>
+                            <p>Planificación de Fallos (Error Handling): Diseñar para cuando las cosas salen mal, no solo para el éxito.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🔧</div>
+                            <h4>Habilidad Técnica</h4>
+                            <p>Lógica condicional para excepciones (If error -> Then recover).</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🚩</div>
+                            <h4>Dinámica: Red Team</h4>
+                            <p>Simular el "Equipo Rojo" para atacar los propios planos y encontrar debilidades.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">💬</div>
+                            <h4>Interacción con XOLO</h4>
+                            <p>XOLO actúa como "Consultor de Fiabilidad". Cuestiona los planos de los alumnos para hacerlos robustos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3>📦 Checklist de Materiales</h3>
+                    <div class="materials-checklist">
+                        <label><input type="checkbox"> Proyector/pantalla + presentación (Diapositivas 1-5)</label>
+                        <label><input type="checkbox"> Internet estable + Gnius Space con XOLO activo</label>
+                        <label><input type="checkbox"> "System Blueprints" de la Sesión 1 (Digital o Impreso)</label>
+                        <label><input type="checkbox"> Plantillas actualizadas "Manejo de Errores"</label>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3>🗓️ Secuencia de la Misión (40 min)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-content">
+                                <strong>Intro: Plan Ideal vs Realista</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Introducción al diseño robusto y mentalidad de ingeniero.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-content">
+                                <strong>Simulacro Red Team (Con XOLO)</strong>
+                                <span class="time-badge">15 min</span>
+                                <p>XOLO cuestiona los diseños: "¿Qué pasa si...?"</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-content">
+                                <strong>Brain Spark: Blueprint Robusto</strong>
+                                <span class="time-badge">15 min</span>
+                                <p>Documentar las soluciones y planes de contingencia.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-content">
+                                <strong>Gnius STORM - Cierre</strong>
+                                <span class="time-badge">3 min</span>
+                                <p>Reflexión sobre la fiabilidad del sistema.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-content">
+                                <strong>Guardado de Planos</strong>
+                                <span class="time-badge">2 min</span>
+                                <p>Asegurar entregables para la fase de construcción.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3>🚨 Resolución Rápida de Problemas</h3>
+                    <div class="troubleshooting-list">
+                        <ul>
+                            <li><strong>Si XOLO no sugiere fallos:</strong> Pide al alumno ser más específico: "Xolo, mi robot debe agarrar un cubo, ¿qué puede fallar?".</li>
+                            <li><strong>Si los alumnos se frustran con los fallos:</strong> Reenmarca el problema: "Mejor encontrar el error hoy en papel que mañana en el robot".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVIDAD 1: INTRO A LA MISIÓN -->
+            <div class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <h2>🚀 Actividad 1: Intro - Del Plan Ideal al Realista</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Explicar que hoy es una sesión "Booster".</li>
+                            <li>Diferenciar entre "Camino Feliz" (todo sale bien) y "Mundo Real" (fallos).</li>
+                            <li>Proyectar Diapositiva 1.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO LISTO</p>
+                        <ul>
+                            <li>Preparado con su rol de Ingeniero de Fiabilidad.</li>
+                            <li>Conoce el contexto de los proyectos de los alumnos.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Revisar su Blueprint de la sesión anterior.</li>
+                            <li>Entender que hoy "atacarán" su propio diseño.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 1: Objetivos</h4>
+                    <div class="slide-content">
+                        <p><strong>🎯 Misión de Hoy:</strong></p>
+                        <p class="highlight-text">Convertir un plan "optimista" en un plan "a prueba de balas".</p>
+                        <p><strong>¿Por qué?</strong> Porque en la robótica real, los sensores fallan, la luz cambia y las baterías se agotan. ¡Debemos estar listos!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVIDAD 2: SIMULACRO RED TEAM -->
+            <div class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <h2>🧠 Actividad 2: Simulacro 'Red Team' con XOLO</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 15:00</span>
+                        <button class="timer-start-btn" data-duration="900">Iniciar</button>
+                    </div>
+                </div>
+
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Indicar: "Abran el chat con XOLO. Díganle una acción de su robot y dejen que él encuentre los problemas".</li>
+                            <li>Monitorear que los alumnos no ignoren los fallos sugeridos.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">🔥 MODO RED TEAM</p>
+                        <ul>
+                            <li>Cuestiona activamente: "¿Y si la cámara no ve el color?", "¿Y si el servo se atasca?".</li>
+                            <li>Sugiere soluciones técnicas: Timeouts, reintentos, señales de alerta.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Interactuar con XOLO describiendo pasos de su robot.</li>
+                            <li>Responder a los "¿Qué pasa si...?" de la IA.</li>
+                            <li>Anotar los posibles fallos descubiertos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 2 y 3: Red Team</h4>
+                    <div class="slide-content">
+                        <p><strong>💬 Reto con XOLO:</strong></p>
+                        <div class="prompt-box">
+                            <pre>Dile a XOLO: "Mi robot tiene que [acción]. ¿Qué podría salir mal?"</pre>
+                        </div>
+                        <p class="highlight-text" style="margin-top: 1rem;">🔍 Ejemplo: "Mi brazo agarra el cubo." -> 🤖 Xolo: "¿Qué pasa si el cubo está muy lejos? ¿Debe el robot avanzar o rendirse?"</p>
+                    </div>
+                </div>
+
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">"Es hora del ataque. XOLO será su 'Red Team'. Abran el chat y cuéntenle qué debe hacer su robot. Él va a intentar encontrar huecos en su lógica. No se asusten, ¡es mejor que XOLO encuentre el error hoy en la pantalla, a que el robot falle mañana en la competencia!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVIDAD 3: BRAIN SPARK - BLUEPRINT ROBUSTO -->
+            <div class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <h2>💡 Actividad 3: Brain Spark - El Blueprint Robusto</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 15:00</span>
+                        <button class="timer-start-btn" data-duration="900">Iniciar</button>
+                    </div>
+                </div>
+
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Pedir que llenen la sección "Manejo de Errores" en sus hojas.</li>
+                            <li>Guiar el formato: <strong>Si pasa [Error] -> Entonces hacer [Acción]</strong>.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ CONSULTOR TÉCNICO</p>
+                        <ul>
+                            <li>Ayuda a redactar la lógica de recuperación.</li>
+                            <li>Ejemplo: "Si sensor < 5cm por 10 seg, entonces retroceder y girar".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Documentar las soluciones a los fallos encontrados.</li>
+                            <li>Actualizar el Blueprint para que incluya planes de contingencia.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 4: Documentación</h4>
+                    <div class="slide-content">
+                        <p><strong>📝 Nueva Sección: Manejo de Errores</strong></p>
+                        <ul>
+                            <li><strong>Trigger (Gatillo):</strong> ¿Cuál es el fallo? (Ej. No veo la tarjeta roja).</li>
+                            <li><strong>Acción de Recuperación:</strong> ¿Qué hace el robot? (Ej. Girar 360° buscando, o encender luz roja de error).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVIDAD 4: CIERRE Y REFLEXIÓN -->
+            <div class="activity-card" id="activity-4">
+                <div class="activity-header">
+                    <h2>⚡ Actividad 4: Gnius STORM - Cierre</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 3:00</span>
+                        <button class="timer-start-btn" data-duration="180">Iniciar</button>
+                    </div>
+                </div>
+
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Felicitar a los equipos por sus sistemas "Antifragiles".</li>
+                            <li>Reflexión rápida sobre la importancia de prever errores.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Compartir con otra pareja un fallo crítico que descubrieron y cómo planean solucionarlo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 5: Think-Pair-Share</h4>
+                    <div class="slide-content tps-structure">
+                        <div class="tps-phase">
+                            <h4>🤔 THINK</h4>
+                            <p>¿Cuál fue el fallo más peligroso que XOLO encontró en mi diseño?</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>💬 SHARE</h4>
+                            <p>Cuéntale a tu compañero: "Mi robot iba a fallar si [condición], pero ahora va a [solución]."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTIVIDAD 5: GUARDADO Y EVIDENCIAS -->
+            <div class="activity-card" id="activity-5">
+                <div class="activity-header">
+                    <h2>✅ Actividad 5: Guardado de Planos</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 2:00</span>
+                        <button class="timer-start-btn" data-duration="120">Iniciar</button>
+                    </div>
+                </div>
+
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Asegurar que los Blueprints físicos o digitales estén guardados.</li>
+                            <li>Confirmar que están listos para la fase de construcción (siguiente sesión).</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⭕ XOLO FINALIZADO</p>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Guardar su "Blueprint Robusto".</li>
+                            <li>Cerrar sesión en Gnius Space.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva Final</h4>
+                    <div class="slide-content">
+                        <p><strong>📁 ¡Listos para Construir!</strong></p>
+                        <p class="highlight-text">Hoy diseñaron un sistema inteligente. La próxima clase... ¡le daremos vida!</p>
+                        <p>Guarda bien tu hoja de Manejo de Errores.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
