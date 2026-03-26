@@ -7,45 +7,6 @@
     <link rel=""stylesheet"" href=""https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"">
     <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"" crossorigin=""anonymous"" referrerpolicy=""no-referrer"" />
     <link rel=""stylesheet"" href=""style.css"">
-        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
-        header { background-color: #2c3e50; color: #fff; padding: 20px; text-align: center; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        header h1 { margin: 0; font-size: 1.5rem; }
-        .header-widgets { display: flex; align-items: center; gap: 20px; }
-        .timer-container { background: #34495e; padding: 10px 20px; border-radius: 8px; }
-        .main-container { display: flex; min-height: 100vh; }
-        .activity-list { width: 250px; background: #fff; border-right: 1px solid #ddd; padding: 20px; position: sticky; top: 80px; height: calc(100vh - 80px); overflow-y: auto; }
-        .activity-list h2 { font-size: 1.2rem; margin-bottom: 20px; }
-        .activity-list ul { list-style: none; padding: 0; }
-        .activity-list li { margin-bottom: 10px; }
-        .activity-list a { text-decoration: none; color: #34495e; font-weight: 500; display: block; padding: 10px; border-radius: 5px; transition: background 0.3s; }
-        .activity-list a:hover { background: #ecf0f1; }
-        .content { flex: 1; padding: 40px; max-width: 1000px; margin: 0 auto; }
-        .activity-card { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .activity-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3498db; padding-bottom: 15px; margin-bottom: 20px; }
-        .activity-timer { display: flex; align-items: center; gap: 10px; }
-        .roles-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .role-card { padding: 20px; border-radius: 8px; }
-        .role-teacher { background-color: #e8f4fd; border-left: 5px solid #3498db; }
-        .role-xolo { background-color: #fcf3cf; border-left: 5px solid #f1c40f; }
-        .role-student { background-color: #e9f7ef; border-left: 5px solid #2ecc71; }
-        .objective-box { background: #fdf2e9; border: 1px dashed #e67e22; padding: 15px; border-radius: 8px; }
-        .prompt-box { background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; font-family: 'Courier New', monospace; position: relative; }
-        .copy-btn { position: absolute; top: 10px; right: 10px; background: #636e72; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
-        .essentials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .essential-card { background: #f8f9fa; border: 1px solid #ddd; padding: 15px; border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; }
-        .essential-icon { font-size: 1.5rem; }
-        .timeline { border-left: 3px solid #3498db; margin-left: 20px; padding-left: 20px; }
-        .timeline-item { position: relative; margin-bottom: 20px; }
-        .timeline-dot { position: absolute; left: -31px; top: 0; width: 20px; height: 20px; background: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; }
-        .time-badge { background: #3498db; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; }
-        .slide-reference { background: #f0f3f4; border-radius: 8px; padding: 20px; margin-top: 20px; }
-        .highlight-text { color: #e74c3c; font-weight: bold; }
-        .collapsible-button { width: 100%; text-align: left; padding: 10px; background: #eee; border: none; cursor: pointer; border-radius: 5px; margin-top: 10px; }
-        .collapsible-content { display: none; padding: 10px; background: #fff; border: 1px solid #eee; }
-        .tps-structure { display: flex; gap: 20px; }
-        .tps-phase { flex: 1; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee; }
-        pre { white-space: pre-wrap; word-wrap: break-word; }
-    </style>
 </head>
 <body>
     <header>
@@ -342,36 +303,12 @@
                     <button class=""collapsible-button"">📖 Ver guion detallado</button>
                     <div class=""collapsible-content"">
                         <p class=""dialogue assistant"">""¡Excelente trabajo hoy, arquitectos de IA! Han pasado de un diagrama en papel a un sistema que procesa información y toma decisiones de manera autónoma. Recuerden que para el Piranha Tank, lo más valioso no es solo que el agente funcione, sino mostrar cómo lo 'domaron' a través de su Bitácora de Mejoras. ¡Guarden sus avances y prepárense para la fase de integración final!""</p>
+              </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script>
-        // Funcionalidad básica para el timer
-        document.querySelectorAll('.timer-start-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                let duration = parseInt(btn.dataset.duration);
-                let display = btn.previousElementSibling;
-                let timer = duration, minutes, seconds;
-                let interval = setInterval(() => {
-                    minutes = parseInt(timer / 60, 10);
-                    seconds = parseInt(timer % 60, 10);
-                    minutes = minutes < 10 ? ""0"" + minutes : minutes;
-                    seconds = seconds < 10 ? ""0"" + seconds : seconds;
-                    display.textContent = ""⏱️ "" + minutes + "":"" + seconds;
-                    if (--timer < 0) clearInterval(interval);
-                }, 1000);
-            });
-        });
-        
-        // Colapsables
-        document.querySelectorAll('.collapsible-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                let content = btn.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+    <script src=""script.js""></script>
 </body>
 </html>"
