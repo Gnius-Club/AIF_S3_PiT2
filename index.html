@@ -1,134 +1,173 @@
-<!DOCTYPE html>
-<html lang="es">
+"<!DOCTYPE html>
+<html lang=""es"">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
     <title>Playbook-P-INT-T2-S2</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel=""stylesheet"" href=""https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"">
+    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"" crossorigin=""anonymous"" referrerpolicy=""no-referrer"" />
+    <link rel=""stylesheet"" href=""style.css"">
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        header { background-color: #2c3e50; color: #fff; padding: 20px; text-align: center; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        .header-widgets { display: flex; align-items: center; gap: 20px; }
+        .timer-container { background: #34495e; padding: 10px 20px; border-radius: 8px; }
+        .main-container { display: flex; min-height: 100vh; }
+        .activity-list { width: 250px; background: #fff; border-right: 1px solid #ddd; padding: 20px; position: sticky; top: 80px; height: calc(100vh - 80px); overflow-y: auto; }
+        .activity-list h2 { font-size: 1.2rem; margin-bottom: 20px; }
+        .activity-list ul { list-style: none; padding: 0; }
+        .activity-list li { margin-bottom: 10px; }
+        .activity-list a { text-decoration: none; color: #34495e; font-weight: 500; display: block; padding: 10px; border-radius: 5px; transition: background 0.3s; }
+        .activity-list a:hover { background: #ecf0f1; }
+        .content { flex: 1; padding: 40px; max-width: 1000px; margin: 0 auto; }
+        .activity-card { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .activity-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3498db; padding-bottom: 15px; margin-bottom: 20px; }
+        .activity-timer { display: flex; align-items: center; gap: 10px; }
+        .roles-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .role-card { padding: 20px; border-radius: 8px; }
+        .role-teacher { background-color: #e8f4fd; border-left: 5px solid #3498db; }
+        .role-xolo { background-color: #fcf3cf; border-left: 5px solid #f1c40f; }
+        .role-student { background-color: #e9f7ef; border-left: 5px solid #2ecc71; }
+        .objective-box { background: #fdf2e9; border: 1px dashed #e67e22; padding: 15px; border-radius: 8px; }
+        .prompt-box { background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; font-family: 'Courier New', monospace; position: relative; }
+        .copy-btn { position: absolute; top: 10px; right: 10px; background: #636e72; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+        .essentials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .essential-card { background: #f8f9fa; border: 1px solid #ddd; padding: 15px; border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; }
+        .essential-icon { font-size: 1.5rem; }
+        .timeline { border-left: 3px solid #3498db; margin-left: 20px; padding-left: 20px; }
+        .timeline-item { position: relative; margin-bottom: 20px; }
+        .timeline-dot { position: absolute; left: -31px; top: 0; width: 20px; height: 20px; background: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; }
+        .time-badge { background: #3498db; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; }
+        .slide-reference { background: #f0f3f4; border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .highlight-text { color: #e74c3c; font-weight: bold; }
+        .collapsible-button { width: 100%; text-align: left; padding: 10px; background: #eee; border: none; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .collapsible-content { display: none; padding: 10px; background: #fff; border: 1px solid #eee; }
+        .tps-structure { display: flex; gap: 20px; }
+        .tps-phase { flex: 1; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee; }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
 </head>
 <body>
     <header>
-        <h1><span class="book-icon">💡</span> <strong>Playbook: Proyecto Integrador T2 - Sesión 2</strong></h1>
-        <div class="header-widgets">
-            <div class="timer-container">
-                <span id="global-timer">⏱️ 40:00</span>
-                <button id="global-start-stop">Start</button>
-                <button id="global-reset">Reset</button>
+        <h1><span class=""book-icon"">💡</span> <strong>Playbook: Proyecto Integrador T2 - Sesión 2</strong></h1>
+        <div class=""header-widgets"">
+            <div class=""timer-container"">
+                <span id=""global-timer"">⏱️ 40:00</span>
+                <button id=""global-start-stop"">Start</button>
+                <button id=""global-reset"">Reset</button>
             </div>
         </div>
     </header>
-    <div class="main-container">
-        <aside class="activity-list">
+    <div class=""main-container"">
+        <aside class=""activity-list"">
             <h2>Actividades</h2>
             <ul>
-                <li><a href="#activity-0">📝 Comando Central</a></li>
-                <li><a href="#activity-1">1. Briefing</a></li>
-                <li><a href="#activity-2">2. Vibe Coding</a></li>
-                <li><a href="#activity-3">3. Implementación</a></li>
-                <li><a href="#activity-4">4. Cierre</a></li>
+                <li><a href=""#activity-0"">📝 Comando Central</a></li>
+                <li><a href=""#activity-1"">1. Briefing</a></li>
+                <li><a href=""#activity-2"">2. Vibe Coding</a></li>
+                <li><a href=""#activity-3"">3. Implementación</a></li>
+                <li><a href=""#activity-4"">4. Cierre</a></li>
             </ul>
         </aside>
-        <main class="content">
+        <main class=""content"">
             <!-- ACTIVIDAD 0: DE UN VISTAZO -->
-            <div class="activity-card" id="activity-0">
-                <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
-                <p class="overview-subtitle">Sesión de Construcción: Orquestación de Agentes y Lógica de Python.</p>
+            <div class=""activity-card"" id=""activity-0"">
+                <h2><span class=""book-icon"">📝</span> De un Vistazo: Comando Central</h2>
+                <p class=""overview-subtitle"">Sesión de Construcción: Orquestación de Agentes y Lógica de Python.</p>
                 
-                <div class="command-section">
+                <div class=""command-section"">
                     <h3>🎯 Objetivo de Aprendizaje</h3>
-                    <div class="objective-box">
+                    <div class=""objective-box"">
                         <p><strong>Los estudiantes podrán:</strong> Traducir una arquitectura de agentes (ReAct/Function Calling) en un prototipo funcional utilizando Python y automatización avanzada, aplicando depuración lógica en flujos de IA.</p>
                     </div>
                 </div>
-                <div class="command-section xolo-prompt">
+                <div class=""command-section xolo-prompt"">
                     <h3>🤖 Prompt de Referencia para XOLO (Solo para Maestro)</h3>
-                    <div class="prompt-box">
-                        <div class="prompt-header">
-                            <span class="prompt-label">⚠️ NOTA: XOLO actúa como Arquitecto de IA y Desarrollador Python automáticamente. Usar solo en emergencia:</span>
-                            <button class="copy-btn">Copiar</button>
+                    <div class=""prompt-box"">
+                        <div class=""prompt-header"">
+                            <span class=""prompt-label"">⚠️ NOTA: XOLO actúa como Arquitecto de IA y Desarrollador Python automáticamente. Usar solo en emergencia:</span>
+                            <button class=""copy-btn"">Copiar</button>
                         </div>
-                        <pre id="main-prompt">Actúa como Arquitecto de Software experto en Python y Orquestación de Agentes. Ayúdame a generar la estructura de mi agente basado en mi 'Vibe Formal', explica cómo funcionan las llamadas a funciones (Function Calling), la lógica ReAct y asísteme en la depuración de la lógica de programación y flujos de datos en Make.com o Python. Sé técnico pero asegúrate de que el alumno entienda el flujo de razonamiento de la IA.</pre>
+                        <pre id=""main-prompt"">Actúa como Arquitecto de Software experto en Python y Orquestación de Agentes. Ayúdame a generar la estructura de mi agente basado en mi 'Vibe Formal', explica cómo funcionan las llamadas a funciones (Function Calling), la lógica ReAct y asísteme en la depuración de la lógica de programación y flujos de datos en Make.com o Python. Sé técnico pero asegúrate de que el alumno entienda el flujo de razonamiento de la IA.</pre>
                     </div>
                 </div>
-                <div class="command-section">
+                <div class=""command-section"">
                     <h3>⚡ Puntos Esenciales de la Misión</h3>
-                    <div class="essentials-grid">
-                        <div class="essential-card">
-                            <div class="essential-icon">🏗️</div>
+                    <div class=""essentials-grid"">
+                        <div class=""essential-card"">
+                            <div class=""essential-icon"">🏗️</div>
                             <h4>Concepto Clave</h4>
                             <p>Arquitectura de Agentes: Implementar el ciclo de Pensamiento-Acción-Observación (ReAct) en un entorno digital.</p>
                         </div>
-                        <div class="essential-card">
-                            <div class="essential-icon">🔧</div>
+                        <div class=""essential-card"">
+                            <div class=""essential-icon"">🔧</div>
                             <h4>Habilidad Técnica</h4>
                             <p>Python y Automatización: Escribir scripts de integración y configurar Function Calling para extender las capacidades de la IA.</p>
                         </div>
-                        <div class="essential-card">
-                            <div class="essential-icon">🚩</div>
+                        <div class=""essential-card"">
+                            <div class=""essential-icon"">🚩</div>
                             <h4>Táctica: Taming the Genie</h4>
-                            <p>No solo generar código, sino "domar" la lógica del agente, entendiendo sus decisiones y documentando los ajustes en el razonamiento.</p>
+                            <p>No solo generar código, sino ""domar"" la lógica del agente, entendiendo sus decisiones y documentando los ajustes en el razonamiento.</p>
                         </div>
-                        <div class="essential-card">
-                            <div class="essential-icon">💬</div>
+                        <div class=""essential-card"">
+                            <div class=""essential-icon"">💬</div>
                             <h4>Interacción con XOLO</h4>
-                            <p>XOLO actúa como "Arquitecto de IA". Genera la lógica base del agente y guía al alumno en la depuración de prompts y scripts.</p>
+                            <p>XOLO actúa como ""Arquitecto de IA"". Genera la lógica base del agente y guía al alumno en la depuración de prompts y scripts.</p>
                         </div>
                     </div>
                 </div>
-                <div class="command-section">
+                <div class=""command-section"">
                     <h3>📦 Checklist de Materiales</h3>
-                    <div class="materials-checklist">
-                        <label><input type="checkbox"> Proyector/pantalla + presentación (Diapositivas 1-4)</label>
-                        <label><input type="checkbox"> Internet estable + Gnius Space con XOLO activo</label>
-                        <label><input type="checkbox"> Entorno de desarrollo Python (VS Code, Replit o similar)</label>
-                        <label><input type="checkbox"> Acceso a Make.com y claves de API necesarias</label>
-                        <label><input type="checkbox"> Bitácora de Mejoras (Digital o física)</label>
+                    <div class=""materials-checklist"">
+                        <label><input type=""checkbox""> Proyector/pantalla + presentación (Diapositivas 1-4)</label>
+                        <label><input type=""checkbox""> Internet estable + Gnius Space con XOLO activo</label>
+                        <label><input type=""checkbox""> Entorno de desarrollo Python (VS Code, Replit o similar)</label>
+                        <label><input type=""checkbox""> Acceso a Make.com y claves de API necesarias</label>
+                        <label><input type=""checkbox""> Bitácora de Mejoras (Digital o física)</label>
                     </div>
                 </div>
-                <div class="command-section">
+                <div class=""command-section"">
                     <h3>🗓️ Secuencia de la Misión (40 min)</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot">1</div>
-                            <div class="timeline-content">
+                    <div class=""timeline"">
+                        <div class=""timeline-item"">
+                            <div class=""timeline-dot"">1</div>
+                            <div class=""timeline-content"">
                                 <strong>Briefing de Arquitectura</strong>
-                                <span class="time-badge">5 min</span>
+                                <span class=""time-badge"">5 min</span>
                                 <p>Enfoque en pasar del diseño de flujo a la implementación lógica.</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot">2</div>
-                            <div class="timeline-content">
+                        <div class=""timeline-item"">
+                            <div class=""timeline-dot"">2</div>
+                            <div class=""timeline-content"">
                                 <strong>Vibe Coding y Lógica de Agentes</strong>
-                                <span class="time-badge">15 min</span>
+                                <span class=""time-badge"">15 min</span>
                                 <p>Generación de scripts de Python y configuración de herramientas con Xolo.</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot">3</div>
-                            <div class="timeline-content">
+                        <div class=""timeline-item"">
+                            <div class=""timeline-dot"">3</div>
+                            <div class=""timeline-content"">
                                 <strong>Implementación y Depuración de Flujos</strong>
-                                <span class="time-badge">15 min</span>
+                                <span class=""time-badge"">15 min</span>
                                 <p>Pruebas de API, conexión de módulos en Make y corrección de bucles lógicos.</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot">4</div>
-                            <div class="timeline-content">
+                        <div class=""timeline-item"">
+                            <div class=""timeline-dot"">4</div>
+                            <div class=""timeline-content"">
                                 <strong>Cierre y Reflexión</strong>
-                                <span class="time-badge">5 min</span>
+                                <span class=""time-badge"">5 min</span>
                                 <p>Revisión final de la Bitácora de Mejoras y eficiencia del agente.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="command-section">
+                <div class=""command-section"">
                     <h3>🚨 Resolución Rápida de Problemas</h3>
-                    <div class="troubleshooting-list">
+                    <div class=""troubleshooting-list"">
                         <ul>
-                            <li><strong>Si XOLO genera funciones demasiado complejas:</strong> Pide al alumno que le diga: "Divide esta función en pasos más pequeños y explícame la lógica del retorno de datos".</li>
+                            <li><strong>Si XOLO genera funciones demasiado complejas:</strong> Pide al alumno que le diga: ""Divide esta función en pasos más pequeños y explícame la lógica del retorno de datos"".</li>
                             <li><strong>Si la API falla:</strong> Verifica las claves de autenticación y los límites de cuota en el dashboard correspondiente.</li>
                             <li><strong>Si el agente entra en bucle:</strong> Revisa el prompt de sistema (System Prompt) para asegurar que tiene instrucciones claras de salida o parada.</li>
                         </ul>
@@ -137,66 +176,66 @@
             </div>
 
             <!-- ACTIVIDAD 1: BRIEFING -->
-            <div class="activity-card" id="activity-1">
-                <div class="activity-header">
+            <div class=""activity-card"" id=""activity-1"">
+                <div class=""activity-header"">
                     <h2>🚀 Actividad 1: Briefing de Arquitectura</h2>
-                    <div class="activity-timer">
-                        <span class="activity-duration">⏱️ 5:00</span>
-                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    <div class=""activity-timer"">
+                        <span class=""activity-duration"">⏱️ 5:00</span>
+                        <button class=""timer-start-btn"" data-duration=""300"">Iniciar</button>
                     </div>
                 </div>
-                <div class="roles-section">
-                    <div class="role-card role-teacher">
+                <div class=""roles-section"">
+                    <div class=""role-card role-teacher"">
                         <h4>👨‍🏫 Rol del Maestro</h4>
                         <ul>
                             <li>Explicar que hoy el diseño arquitectónico de la sesión 1 se convierte en un sistema funcional.</li>
-                            <li>Introducir el concepto de "Taming the Genie" aplicado a la orquestación: dominar la autonomía de la IA.</li>
+                            <li>Introducir el concepto de ""Taming the Genie"" aplicado a la orquestación: dominar la autonomía de la IA.</li>
                             <li>Presentar la Bitácora de Mejoras como el registro de iteraciones del agente.</li>
                         </ul>
                     </div>
-                    <div class="role-card role-student">
+                    <div class=""role-card role-student"">
                         <h4>👦 Rol del Alumno</h4>
                         <ul>
-                            <li>Preparar su "Vibe Formal" (diagrama de flujo o arquitectura) de la sesión anterior.</li>
+                            <li>Preparar su ""Vibe Formal"" (diagrama de flujo o arquitectura) de la sesión anterior.</li>
                             <li>Entender que la meta es crear un flujo donde la IA tome decisiones basadas en herramientas (tools).</li>
                         </ul>
                     </div>
                 </div>
-                <div class="slide-reference">
+                <div class=""slide-reference"">
                     <h4>📊 Diapositiva 1: De la Arquitectura al Código</h4>
-                    <div class="slide-content">
+                    <div class=""slide-content"">
                         <p><strong>🎯 Misión:</strong> Materializar tu Agente Inteligente.</p>
-                        <p class="highlight-text">Hoy programamos la lógica, conectamos las APIs y depuramos el razonamiento.</p>
+                        <p class=""highlight-text"">Hoy programamos la lógica, conectamos las APIs y depuramos el razonamiento.</p>
                     </div>
                 </div>
             </div>
 
             <!-- ACTIVIDAD 2: VIBE CODING -->
-            <div class="activity-card" id="activity-2">
-                <div class="activity-header">
+            <div class=""activity-card"" id=""activity-2"">
+                <div class=""activity-header"">
                     <h2>🧠 Actividad 2: Vibe Coding y Lógica de Agentes</h2>
-                    <div class="activity-timer">
-                        <span class="activity-duration">⏱️ 15:00</span>
-                        <button class="timer-start-btn" data-duration="900">Iniciar</button>
+                    <div class=""activity-timer"">
+                        <span class=""activity-duration"">⏱️ 15:00</span>
+                        <button class=""timer-start-btn"" data-duration=""900"">Iniciar</button>
                     </div>
                 </div>
-                <div class="roles-section">
-                    <div class="role-card role-teacher">
+                <div class=""roles-section"">
+                    <div class=""role-card role-teacher"">
                         <h4>👨‍🏫 Rol del Maestro</h4>
                         <ul>
-                            <li>Supervisar que los prompts a Xolo definan claramente las "Tools" o funciones que el agente puede usar.</li>
+                            <li>Supervisar que los prompts a Xolo definan claramente las ""Tools"" o funciones que el agente puede usar.</li>
                             <li>Asegurar que los alumnos definan el framework (ReAct, cadenas de LangChain o scripts puros de Python).</li>
                         </ul>
                     </div>
-                    <div class="role-card role-xolo">
+                    <div class=""role-card role-xolo"">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status">✅ ARQUITECTO DE IA</p>
+                        <p class=""xolo-status"">✅ ARQUITECTO DE IA</p>
                         <ul>
                             <li>Traduce el diseño de los alumnos a código Python funcional.</li>
                             <li>Explica cómo integrar Function Calling para que el agente interactúe con el mundo exterior.</li>
                         </ul>
                     </div>
-                    <div class="role-card role-student">
+                    <div class=""role-card role-student"">
                         <h4>👦 Rol del Alumno</h4>
                         <ul>
                             <li>Usar Vibe Coding para generar el script principal del agente o la estructura de automatización.</li>
@@ -205,44 +244,44 @@
                         </ul>
                     </div>
                 </div>
-                <div class="slide-reference">
+                <div class=""slide-reference"">
                     <h4>📊 Diapositiva 2: Orquestando al Genio</h4>
-                    <div class="slide-content">
+                    <div class=""slide-content"">
                         <p><strong>💬 Prompt con XOLO:</strong></p>
-                        <div class="prompt-box">
-                            <pre>"Xolo, basado en mi arquitectura de [Proyecto], genera un script en Python que use un agente ReAct. El agente debe poder llamar a la función [Nombre de Función] cuando detecte [Condición]. Explícame el flujo de Pensamiento (Thought)."</pre>
+                        <div class=""prompt-box"">
+                            <pre>""Xolo, basado en mi arquitectura de [Proyecto], genera un script en Python que use un agente ReAct. El agente debe poder llamar a la función [Nombre de Función] cuando detecte [Condición]. Explícame el flujo de Pensamiento (Thought).""</pre>
                         </div>
-                        <p class="highlight-text" style="margin-top: 1rem;">⚠️ Regla de Oro: Si no entiendes el flujo de decisión del agente, no tienes el control. ¡Dómalo!</p>
+                        <p class=""highlight-text"" style=""margin-top: 1rem;"">⚠️ Regla de Oro: Si no entiendes el flujo de decisión del agente, no tienes el control. ¡Dómalo!</p>
                     </div>
                 </div>
             </div>
 
             <!-- ACTIVIDAD 3: IMPLEMENTACIÓN -->
-            <div class="activity-card" id="activity-3">
-                <div class="activity-header">
+            <div class=""activity-card"" id=""activity-3"">
+                <div class=""activity-header"">
                     <h2>💡 Actividad 3: Implementación y Depuración de Flujos</h2>
-                    <div class="activity-timer">
-                        <span class="activity-duration">⏱️ 15:00</span>
-                        <button class="timer-start-btn" data-duration="900">Iniciar</button>
+                    <div class=""activity-timer"">
+                        <span class=""activity-duration"">⏱️ 15:00</span>
+                        <button class=""timer-start-btn"" data-duration=""900"">Iniciar</button>
                     </div>
                 </div>
-                <div class="roles-section">
-                    <div class="role-card role-teacher">
+                <div class=""roles-section"">
+                    <div class=""role-card role-teacher"">
                         <h4>👨‍🏫 Rol del Maestro</h4>
                         <ul>
                             <li>Asistir en errores de sintaxis en Python o errores de conexión en Make.com.</li>
                             <li>Fomentar la depuración de prompts: si el agente alucina, hay que ajustar el System Prompt.</li>
                         </ul>
                     </div>
-                    <div class="role-card role-xolo">
+                    <div class=""role-card role-xolo"">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status">✅ CONSULTOR TÉCNICO</p>
+                        <p class=""xolo-status"">✅ CONSULTOR TÉCNICO</p>
                         <ul>
                             <li>Analiza logs de error para identificar fallos en las llamadas a funciones.</li>
                             <li>Sugiere mejoras en el manejo de excepciones para que el agente no se detenga ante un error.</li>
                         </ul>
                     </div>
-                    <div class="role-card role-student">
+                    <div class=""role-card role-student"">
                         <h4>👦 Rol del Alumno</h4>
                         <ul>
                             <li>Configurar el entorno (Python/Make) y cargar los scripts generados.</li>
@@ -251,34 +290,34 @@
                         </ul>
                     </div>
                 </div>
-                <div class="slide-reference">
+                <div class=""slide-reference"">
                     <h4>📊 Diapositiva 3: Debugging del Razonamiento</h4>
-                    <div class="slide-content">
+                    <div class=""slide-content"">
                         <p><strong>🛠️ Ciclo de Iteración Digital:</strong></p>
                         <p>1. Ejecuta -> 2. Observa -> 3. Identifica Fallo Lógico -> 4. Ajusta con Xolo -> 5. Optimiza.</p>
-                        <p class="highlight-text">La Bitácora de Mejoras debe mostrar la evolución de la "inteligencia" de tu sistema.</p>
+                        <p class=""highlight-text"">La Bitácora de Mejoras debe mostrar la evolución de la ""inteligencia"" de tu sistema.</p>
                     </div>
                 </div>
             </div>
 
             <!-- ACTIVIDAD 4: CIERRE -->
-            <div class="activity-card" id="activity-4">
-                <div class="activity-header">
+            <div class=""activity-card"" id=""activity-4"">
+                <div class=""activity-header"">
                     <h2>⚡ Actividad 4: Cierre y Reflexión</h2>
-                    <div class="activity-timer">
-                        <span class="activity-duration">⏱️ 5:00</span>
-                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    <div class=""activity-timer"">
+                        <span class=""activity-duration"">⏱️ 5:00</span>
+                        <button class=""timer-start-btn"" data-duration=""300"">Iniciar</button>
                     </div>
                 </div>
-                <div class="roles-section">
-                    <div class="role-card role-teacher">
+                <div class=""roles-section"">
+                    <div class=""role-card role-teacher"">
                         <h4>👨‍🏫 Rol del Maestro</h4>
                         <ul>
                             <li>Revisar aleatoriamente las Bitácoras de Mejoras, enfocándose en cómo resolvieron problemas lógicos.</li>
                             <li>Reforzar que un buen desarrollador de IA es aquel que sabe guiar el razonamiento de la máquina.</li>
                         </ul>
                     </div>
-                    <div class="role-card role-student">
+                    <div class=""role-card role-student"">
                         <h4>👦 Rol del Alumno</h4>
                         <ul>
                             <li>Asegurar que su código esté comentado y guardado en su repositorio o carpeta del proyecto.</li>
@@ -286,28 +325,53 @@
                         </ul>
                     </div>
                 </div>
-                <div class="slide-reference">
+                <div class=""slide-reference"">
                     <h4>📊 Diapositiva 4: Bitácora de Mejoras</h4>
-                    <div class="slide-content tps-structure">
-                        <div class="tps-phase">
+                    <div class=""slide-content tps-structure"">
+                        <div class=""tps-phase"">
                             <h4>🤔 THINK</h4>
-                            <p>¿Cuál fue la alucinación o error lógico más complejo y cómo ajustaste el código para "domarlo"?</p>
+                            <p>¿Cuál fue la alucinación o error lógico más complejo y cómo ajustaste el código para ""domarlo""?</p>
                         </div>
-                        <div class="tps-phase">
+                        <div class=""tps-phase"">
                             <h4>💬 SHARE</h4>
                             <p>Explica a tu compañero cómo tu agente utiliza Function Calling para realizar una tarea específica.</p>
                         </div>
                     </div>
                 </div>
-                <div class="optional-script">
-                    <button class="collapsible-button">📖 Ver guion detallado</button>
-                    <div class="collapsible-content">
-                        <p class="dialogue assistant">"¡Excelente trabajo hoy, arquitectos de IA! Han pasado de un diagrama en papel a un sistema que procesa información y toma decisiones de manera autónoma. Recuerden que para el Piranha Tank, lo más valioso no es solo que el agente funcione, sino mostrar cómo lo 'domaron' a través de su Bitácora de Mejoras. ¡Guarden sus avances y prepárense para la fase de integración final!"</p>
+                <div class=""optional-script"">
+                    <button class=""collapsible-button"">📖 Ver guion detallado</button>
+                    <div class=""collapsible-content"">
+                        <p class=""dialogue assistant"">""¡Excelente trabajo hoy, arquitectos de IA! Han pasado de un diagrama en papel a un sistema que procesa información y toma decisiones de manera autónoma. Recuerden que para el Piranha Tank, lo más valioso no es solo que el agente funcione, sino mostrar cómo lo 'domaron' a través de su Bitácora de Mejoras. ¡Guarden sus avances y prepárense para la fase de integración final!""</p>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Funcionalidad básica para el timer
+        document.querySelectorAll('.timer-start-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                let duration = parseInt(btn.dataset.duration);
+                let display = btn.previousElementSibling;
+                let timer = duration, minutes, seconds;
+                let interval = setInterval(() => {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+                    minutes = minutes < 10 ? ""0"" + minutes : minutes;
+                    seconds = seconds < 10 ? ""0"" + seconds : seconds;
+                    display.textContent = ""⏱️ "" + minutes + "":"" + seconds;
+                    if (--timer < 0) clearInterval(interval);
+                }, 1000);
+            });
+        });
+        
+        // Colapsables
+        document.querySelectorAll('.collapsible-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                let content = btn.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
-</html>
+</html>"
